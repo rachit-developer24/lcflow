@@ -1,0 +1,1 @@
+LC Flow is my personal learning project for building an event-driven letter-of-credit platform. The project will model LC creation, document checking, discrepancy handling and payment processing. It will use Java, Spring Boot, Kafka and Kubernetes.
