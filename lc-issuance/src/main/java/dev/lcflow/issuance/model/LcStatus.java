@@ -1,4 +1,4 @@
-package dev.lcflow.issuance;
+package dev.lcflow.issuance.model;
 
 public enum LcStatus {
     ISSUED,
