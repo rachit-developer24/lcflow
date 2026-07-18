@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class LetterOfCredit {
@@ -19,10 +20,14 @@ public class LetterOfCredit {
     private String beneficiaryName;
     private BigDecimal amount;
     private String currency;
+
     @Enumerated(EnumType.STRING)
     private LcStatus status;
     private LocalDate expiryDate;
-    private String requiredDocuments;
+
+    @ElementCollection
+    @Enumerated(EnumType.STRING)
+    private List<DocumentType> requiredDocuments;
     private Instant createdAt;
 
     public Long getId() {
@@ -89,11 +94,12 @@ public class LetterOfCredit {
         this.expiryDate = expiryDate;
     }
 
-    public String getRequiredDocuments() {
+
+    public List<DocumentType> getRequiredDocuments() {
         return requiredDocuments;
     }
 
-    public void setRequiredDocuments(String requiredDocuments) {
+    public void setRequiredDocuments(List<DocumentType> requiredDocuments) {
         this.requiredDocuments = requiredDocuments;
     }
 
