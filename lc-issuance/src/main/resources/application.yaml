@@ -1,3 +1,10 @@
 spring:
   application:
     name: lc-issuance
+  datasource:
+    url: jdbc:postgresql://localhost:5432/lc_issuance
+    username: lcflow
+    password: lcflow_local
+  jpa:
+    hibernate:
+      ddl-auto: update
