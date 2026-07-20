@@ -40,6 +40,8 @@ public class LetterOfCredit {
     @ElementCollection
     @Enumerated(EnumType.STRING)
     private List<DocumentType> requiredDocuments;
+
+    @Column(nullable = false)
     private Instant createdAt;
 
     public Long getId() {
