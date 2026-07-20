@@ -14,17 +14,29 @@ public class LetterOfCredit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true,nullable = false)
+    @Column(unique = true, nullable = false)
     private String lcReference;
+
+    @Column(nullable = false)
     private String applicantName;
+
+    @Column(nullable = false)
     private String beneficiaryName;
+
+    @Column(nullable = false)
     private BigDecimal amount;
+
+    @Column(nullable = false)
     private String currency;
 
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private LcStatus status;
+
+    @Column(nullable = false)
     private LocalDate expiryDate;
 
+    @Column(nullable = false)
     @ElementCollection
     @Enumerated(EnumType.STRING)
     private List<DocumentType> requiredDocuments;
