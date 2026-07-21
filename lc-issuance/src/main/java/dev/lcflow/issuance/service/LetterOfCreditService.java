@@ -20,8 +20,8 @@ public class LetterOfCreditService {
     }
 
     private String generateLcReference() {
-        String random = UUID.randomUUID().toString().substring(0, 8).toUpperCase();
-        return "LC-" + Year.now() + "-" + random;
+        long next = letterOfCreditRepository.nextLcReferenceNumber();
+        return String.format("LC-%d-%06d", Year.now().getValue(), next);
     }
 
     @Transactional
